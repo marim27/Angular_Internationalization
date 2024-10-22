@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(withInterceptorsFromDi(), withFetch()),  // Enable fetch
+    provideHttpClient(withInterceptorsFromDi(), withFetch()),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {

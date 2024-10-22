@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json'); // Updated path
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @Component({
@@ -14,7 +14,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   standalone: true,
   imports: [RouterOutlet, TranslateModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Fixed the typo here
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'final';
@@ -26,7 +26,7 @@ export class AppComponent {
     this._LanguageService.getLanguage().subscribe({
       next: (lang) => {
         this.lang = lang;
-        this.translate.use(this.lang); // Set the language in TranslateService
+        this.translate.use(this.lang);
       }
     });
   }
@@ -34,6 +34,6 @@ export class AppComponent {
   changeLang() {
     this.lang = (this.lang === 'en') ? 'ar' : 'en';
     this._LanguageService.changeLanguage(this.lang);
-    this.translate.use(this.lang); // Set the new language
+    this.translate.use(this.lang);
   }
 }
